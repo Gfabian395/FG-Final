@@ -1,0 +1,251 @@
+/* RESET */
+* {
+    font-family: "Wellfleet", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.grid-area{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "header header header header"
+    "main main main main"
+    "aside aside aside aside"
+    "footer footer footer footer"
+    ;
+}
+
+/* HEADER */
+header{
+    grid-area: header;
+}
+
+.logo {
+    width: 95px;
+}
+
+/* MAIN */
+.main{
+    grid-area: main;
+}
+
+.carousel {
+    width: 100%;
+}
+
+.flex{
+    display: flex;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.carta {
+    position: relative;
+    width: 300px;
+    height: 350px;
+}
+
+.carta .cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.carta .frontal {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.carta .frontal .img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carta .frontal h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: black;
+    text-align: center;
+}
+
+.carta .trasera {
+    transform: perspective(600px) rotateY(180deg);
+    padding: 15px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px black;
+}
+
+.carta .trasera .link {
+    border-top: solid 1px black;
+    height: 50px;
+    line-height: 50px;
+}
+
+.carta .trasera .link a {
+    color: black;
+}
+
+.carta .trasera h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.carta.trasera p {
+    letter-spacing: 1px;
+}
+
+.carta:hover .frontal {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.carta:hover .trasera {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+.aviso {
+    text-align: center;
+    background-color: orange;
+    color: yellow;
+    border: solid black 1px;
+}
+
+.contacto {
+    width: 100%;
+}
+
+.svg-contactos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer
+}
+
+.icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+    border-radius: 50%;
+    transition: all .8s;
+}
+
+.icon:hover {
+    background-color: #e60073;
+    box-shadow: 0 0 20px #e60073;
+}
+
+.icon:hover:nth-child(2) {
+    background-color: #1877f2;
+    box-shadow: 0 0 20px #1877f2;
+}
+
+.icon:hover:nth-child(3) {
+    background-color: #25d366;
+    box-shadow: 0 0 20px #25d366;
+}
+
+.icon:hover:nth-child(4) {
+    background-color: #1da1f2;
+    box-shadow: 0 0 20px #1da1f2;
+}
+
+.icon svg {
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7rem;
+}
+
+svg circle {
+    stroke-dasharray: 150;
+    transition: all .8s ease-in-out;
+}
+
+.icon:hover circle {
+    stroke-dasharray: 220;
+}
+
+.history-title {
+    text-align: center;
+    margin: 0 0 60px 0;
+    font-size: 5rem;
+}
+
+.parrafo-history {
+    font-size: 3rem;
+    line-height: 6rem;
+    margin-bottom: 20px;
+}
+
+.mode-infinite {
+    padding: 40px;
+    text-align: justify;
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    max-width: 1080px;
+    height: 1200px;
+    transform: perspective(400px) rotateX(14deg);
+    animation: intro 10s linear infinite;
+}
+
+@keyframes intro {
+    0% {
+
+        transform: perspective(200px) rotateX(14deg) translateY(200px);
+    }
+    100%{
+        transform: perspective(200px) rotateX(14deg) translateY(-1000px)
+    }
+}
+
+/* ASIDE */
+aside{
+    grid-area: aside;
+}
+
+.garantia {
+    width: 100%;
+}
+
+.eslogan{
+    text-align: center;
+    background-color: greenyellow;
+    border: solid black 1px;
+}
+
+/* FOOTER */
+footer{
+    grid-area: footer;
+}
+.fin {
+    text-align: center;
+    background-color: pink;
+    border: solid black 1px;
+}
